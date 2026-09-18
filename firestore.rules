@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128;
+    }
+
+    function isValidProduct(data) {
+      return data.name is string && data.name.size() > 0 && data.name.size() <= 200
+        && data.price is number && data.price >= 0
+        && data.description is string && data.description.size() <= 2000
+        && data.category is string && data.category.size() <= 100
+        && data.available is bool;
+    }
+
+    // Regras para o cardápio de produtos da Alfajoraria Andrey
+    match /produtos/{produtoId} {
+      // Clientes podem ler e listar os produtos do cardápio público
+      allow get, list: if true;
+      
+      // Apenas administradores autenticados podem cadastrar, alterar ou excluir produtos
+      allow create: if isSignedIn() && isValidId(produtoId) && isValidProduct(request.resource.data);
+      allow update: if isSignedIn() && isValidId(produtoId) && isValidProduct(request.resource.data);
+      allow delete: if isSignedIn() && isValidId(produtoId);
+    }
+
+    // Regras para configurações da loja e textos personalizáveis
+    match /configuracoes/{configId} {
+      // Clientes e visitantes podem ler as configurações públicas da loja
+      allow get, list: if true;
+      
+      // Apenas administradores autenticados podem salvar ou atualizar as configurações da loja
+      allow create, update: if isSignedIn() && isValidId(configId);
+      allow delete: if false;
+    }
+
+    // Bloqueio padrão para qualquer outra coleção
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

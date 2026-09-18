@@ -1,0 +1,68 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Produto",
+      "description": "Alfajor artesanal ou item do cardápio da Alfajoraria Andrey",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único do produto",
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "description": "Nome do sabor do alfajor",
+          "maxLength": 200
+        },
+        "price": {
+          "type": "number",
+          "description": "Preço unitário em Reais (BRL)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Descrição detalhada do alfajor artesanal",
+          "maxLength": 1000
+        },
+        "ingredients": {
+          "type": "array",
+          "description": "Lista de ingredientes selecionados"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL ou Data URL da foto do produto",
+          "maxLength": 1000000
+        },
+        "category": {
+          "type": "string",
+          "description": "Categoria do produto",
+          "maxLength": 100
+        },
+        "available": {
+          "type": "boolean",
+          "description": "Indica se o item está disponível para pedido"
+        },
+        "featured": {
+          "type": "boolean",
+          "description": "Destaque no cardápio"
+        },
+        "badge": {
+          "type": "string",
+          "description": "Etiqueta visual opcional",
+          "maxLength": 100
+        },
+        "createdAt": {
+          "type": "number",
+          "description": "Timestamp de criação"
+        }
+      },
+      "required": ["id", "name", "price", "description", "category", "available"]
+    }
+  },
+  "firestore": {
+    "/produtos/{produtoId}": {
+      "schema": "Product",
+      "description": "Coleção de produtos e sabores artesanais no Firestore"
+    }
+  }
+}

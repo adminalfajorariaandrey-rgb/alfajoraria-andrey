@@ -1,0 +1,6 @@
+{
+  "name": "Alfajoraria Andrey",
+  "description": "Cardápio digital e encomendas de alfajores artesanais da Alfajoraria Andrey. Atendimento de segunda a sábado das 09h às 18h. Telefone/WhatsApp: +55 (24) 99262-0792.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

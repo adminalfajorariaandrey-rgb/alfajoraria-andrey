@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <!-- Warm cream background -->
+  <rect width="500" height="500" rx="40" fill="#FAF5EB" />
+  
+  <!-- Subtle decorative sparkle in bottom right -->
+  <path d="M 436,436 Q 442,436 442,430 Q 442,436 448,436 Q 442,436 442,442 Q 442,436 436,436 Z" fill="#E6D7C3" />
+  
+  <!-- Central Alfajor Illustration -->
+  <g transform="translate(250, 142)">
+    <!-- Bottom Cookie Layer -->
+    <ellipse cx="0" cy="24" rx="68" ry="18" fill="#2E1308" />
+    <path d="M -68,14 C -68,34 68,34 68,14 L 68,24 C 68,44 -68,44 -68,24 Z" fill="#260F06" />
+    
+    <!-- Wavy Cream / Dulce de Leche Filling Layer -->
+    <path d="M -67,11 C -67,16 -53,17 -45,11 C -37,5 -23,17 -15,12 C -7,7 7,18 15,12 C 23,6 37,18 45,11 C 53,4 67,16 67,11 L 67,18 C 67,23 53,25 45,18 C 37,11 23,25 15,19 C 7,13 -7,25 -15,19 C -23,13 -37,24 -45,18 C -53,12 -67,23 -67,18 Z" fill="#FFFFFF" />
+    
+    <!-- Top Cookie Rim / Depth -->
+    <path d="M -68,-6 C -68,16 68,16 68,-6 L 68,10 C 68,28 -68,28 -68,10 Z" fill="#2E1308" />
+    
+    <!-- Top Cookie Dome / Surface -->
+    <ellipse cx="0" cy="-8" rx="68" ry="22" fill="#38180B" />
+    <!-- Top Cookie Highlight Glaze -->
+    <ellipse cx="-16" cy="-12" rx="42" ry="12" fill="#4A2312" opacity="0.6" />
+  </g>
+
+  <!-- Typography 1: ALFAJORARIA -->
+  <text 
+    x="250" 
+    y="245" 
+    text-anchor="middle" 
+    fill="#2B1208" 
+    font-family="'Playfair Display', Georgia, serif" 
+    font-size="44" 
+    font-weight="900" 
+    letter-spacing="2.5px"
+  >
+    ALFAJORARIA
+  </text>
+
+  <!-- Typography 2: Andrey (Cursive Calligraphy Script with Flourish) -->
+  <g transform="translate(250, 340)">
+    <text 
+      x="0" 
+      y="0" 
+      text-anchor="middle" 
+      fill="#2B1208" 
+      font-family="'Playfair Display', 'Brush Script MT', cursive, serif" 
+      font-style="italic"
+      font-size="64" 
+      font-weight="700" 
+      letter-spacing="-1px"
+    >
+      Andrey
+    </text>
+    <!-- Elegant underline swoop flourish -->
+    <path 
+      d="M -115,22 C -60,18 30,16 95,22 C 115,24 135,28 140,24 C 145,20 120,16 80,17 C -10,18 -80,24 -115,22 Z" 
+      fill="#2B1208" 
+    />
+  </g>
+
+  <!-- Typography 3: ONDE NASCE O SABOR -->
+  <text 
+    x="250" 
+    y="410" 
+    text-anchor="middle" 
+    fill="#2B1208" 
+    font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" 
+    font-size="18" 
+    font-weight="800" 
+    letter-spacing="5px"
+  >
+    ONDE NASCE O SABOR
+  </text>
+</svg>
